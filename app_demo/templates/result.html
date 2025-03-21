@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Music</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <i class="fas fa-music"></i> Music Generated Successfully
+        </h1>
+
+        <div class="audio-container">
+            <div class="audio-label">Generated Music</div>
+            <audio controls>
+                <source src="{{ url_for('play_generated_music') }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="audio-controls">
+                <a href="{{ url_for('play_generated_music') }}" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download WAV
+                </a>
+                <a href="{{ url_for('download_generated_midi') }}" download class="btn btn-info">
+                    <i class="fas fa-file-audio"></i> Download MIDI
+                </a>
+            </div>
+        </div>
+
+        <div class="audio-container">
+            <div class="audio-label">Original Music</div>
+            <audio controls>
+                <source src="{{ url_for('play_original_music') }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="audio-controls">
+                <a href="{{ url_for('play_original_music') }}" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download WAV
+                </a>
+                <a href="{{ url_for('download_original_midi') }}" download class="btn btn-info">
+                    <i class="fas fa-file-audio"></i> Download MIDI
+                </a>
+            </div>
+        </div>
+
+        <div class="audio-container">
+            <div class="audio-label">NES Style Music</div>
+            <audio controls>
+                <source src="{{ url_for('play_NES_music') }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="audio-container">
+            <div class="audio-label">Real NES Music</div>
+            <audio controls>
+                <source src="{{ url_for('play_NES_real_music') }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="section">
+            <a href="/" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-arrow-left"></i> Create New Music
+            </a>
+        </div>
+    </div>
+</body>
+</html>
